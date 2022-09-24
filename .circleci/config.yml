@@ -22,8 +22,8 @@ jobs:
       - image: cimg/node:16.10 
       # cimg/base:2022.0
         auth:
-          username: faithwenyi
-          password: t8iAP3WBqXpGcRR
+          username: un
+          password: pw
           # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     
@@ -39,7 +39,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: Build app
-          command: docker build -t simple-node . #docker images 
+          command: docker build -t simple-node . 
 
 workflows:
   # Below is the definition of your workflow.
@@ -48,6 +48,7 @@ workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
   sample:
     jobs:
-      - build-and-test
+      - build-and-test:
+         context: context1
       # For running simple node tests, you could optionally use the node/test job from the orb to replicate and replace the job above in fewer lines.
       # - node/test
