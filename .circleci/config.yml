@@ -19,7 +19,8 @@ jobs:
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/node
     docker:
      
-      - image: cimg/node:16.10 # cimg/base:2022.0
+      - image: cimg/node:16.10 
+      # cimg/base:2022.0
         auth:
           username: faithwenyi
           password: t8iAP3WBqXpGcRR
