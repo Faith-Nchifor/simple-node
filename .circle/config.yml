@@ -38,7 +38,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: Build app
-          command: docker images #docker build -t simple-node .
+          command: docker build -t simple-node . #docker images 
 
 workflows:
   # Below is the definition of your workflow.
