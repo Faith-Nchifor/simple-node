@@ -18,12 +18,15 @@ jobs:
       - node/install-packages:
           pkg-manager: npm      
       - run:
-          command: npm run build
+          command: docker build -t simple-node .
           name: Build app
       - persist_to_workspace:
           root: ~/project
           paths:
             - .
+      #- deploy:
+        #name: push to dockerhub
+        #command:
 
 
 workflows:
