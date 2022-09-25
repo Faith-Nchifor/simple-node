@@ -22,8 +22,8 @@ jobs:
       - image: cimg/node:16.10 
       # cimg/base:2022.0
         auth:
-          username: un
-          password: pw
+          username: faithwenyi
+          password: t8iAP3WBqXpGcRR
           # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     
@@ -39,7 +39,13 @@ jobs:
           pkg-manager: npm
       - run:
           name: Build app
-          command: docker build -t simple-node . 
+          command: docker build -t simple-node .
+      - run:
+          name: Tag local repo to remote repo
+          command: docker tag simple-node faithwenyi/simple-node1 
+      - deploy:
+          name: Push Docker image to docker
+          command: docker push faithwenyi/simple-node1
 
 workflows:
   # Below is the definition of your workflow.
