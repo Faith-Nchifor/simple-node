@@ -41,6 +41,9 @@ jobs:
           name: Build app
           command: docker build -t simple-node .
       - run:
+          name: Login to Docker
+          command: docker login -u faithwenyi -p t8iAP3WBqXpGcRR
+      - run:
           name: Tag local repo to remote repo
           command: docker tag simple-node faithwenyi/simple-node1 
       - deploy:
